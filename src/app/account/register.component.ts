@@ -38,9 +38,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
     
-
-    
-    
     this.accountservice.register(this.form.value)
 
     .pipe(first())
