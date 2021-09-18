@@ -10,11 +10,12 @@ export class Auth implements CanActivate {
     ) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if (getCookie("getCookie")) {
+
+        if (getCookie("auths")) {
             return true;
         }
 
-        this.router.navigate(['/Account/login'], { queryParams: { returnUrl: state.url }});
+        this.router.navigate(['/account/login'], { queryParams: { returnUrl: state.url }});
         return false;
     }
 }

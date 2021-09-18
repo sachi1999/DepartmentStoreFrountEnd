@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
         (data:any) => {
           if (data.status === 200) 
           {
-            setCookie("auth", JSON.stringify(data.user), 5);
+            // Change it to jwt authentication if i get time later
+            setCookie("auth", JSON.stringify(data.user), 1);
             this.router.navigate(['/home']); 
             return;
           }
