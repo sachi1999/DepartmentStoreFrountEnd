@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomeRoutingModule } from './home-routing.module';
 
 import { NavComponent } from './shared/nav/nav.component';
 import { CartItemComponent } from './shopping-cart/cart/cart-item/cart-item.component';
@@ -12,17 +13,18 @@ import { ShoppingComponent } from './shopping-cart/shopping/shopping.component';
 
 @NgModule({
     imports: [
-        BrowserModule,
-        FormsModule
+        CommonModule,
+        ReactiveFormsModule,
+        HomeRoutingModule,
+        CommonModule,
     ],
     declarations: [
-        NavComponent,
-        ShoppingCartComponent,
-        CartComponent,
-        CartItemComponent,
         FilterComponent,
+        ShoppingCartComponent,
         ShoppingComponent,
-        ShoppingItemComponent
+        ShoppingItemComponent,
+        CartItemComponent,
+CartComponent,
     ],
    
 })

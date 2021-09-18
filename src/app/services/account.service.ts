@@ -9,7 +9,7 @@ import { User } from '../account/models/user';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
-   private userSubject: BehaviorSubject<User>;
+    private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
 
     constructor(
@@ -25,7 +25,6 @@ export class AccountService {
     }
 
     login(emailId, pwd) {
-        console.log("Login user");
         return this.http.post<User>(`${environment.apiUrl}/api/v1/Auth/Login`, { emailId, pwd })
             .pipe(map(user => {
                 return user;
@@ -33,8 +32,6 @@ export class AccountService {
     }
 
     register(user: User) {
-
-        console.log("register working");
         return this.http.post(`${environment.apiUrl}/api/v1/Account/Register`, user);
     }
 }

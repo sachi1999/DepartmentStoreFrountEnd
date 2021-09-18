@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from '@app/services/account.service';
 import { first } from 'rxjs/operators';
+import { setCookie } from 'src/helper/Cookie';
 
 
 @Component({
@@ -32,15 +33,14 @@ export class LoginComponent implements OnInit {
         (data:any) => {
           if (data.status === 200) 
           {
+            setCookie("auth", JSON.stringify(data.user), 5);
             this.router.navigate(['/home']); 
             return;
           }
           this.errMsg = data.errMsg;
         },
         error => {
-         
-         //   this.alertService.error(error);
-         //   this.loading = false;
+          this.errMsg = "Somthing went wrong please try later"
         
       });
 
