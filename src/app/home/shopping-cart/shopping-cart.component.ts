@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '@app/services/product.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
 
+  searchbyCatogery(searchTerm: string) {
+    this.productService.searchByCataoger(searchTerm)
+      .pipe(first())
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+        },
+        error => {
+          console.log(error)
+        });
+  }
 }
