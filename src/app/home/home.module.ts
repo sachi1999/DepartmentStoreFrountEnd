@@ -19,6 +19,7 @@ import { ShoppingComponent } from './shopping-cart/shopping/shopping.component';
         CommonModule,
     ],
     declarations: [
+        NavComponent,
         FilterComponent,
         ShoppingCartComponent,
         ShoppingComponent,
