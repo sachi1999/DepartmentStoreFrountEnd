@@ -10,22 +10,38 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   title = 'departmentStore';
+  errMsg: string = "";
   constructor(private accountservice: AccountService, private router: Router) {
 
   }
 
   login(email, pwd) {
-    // this.router.navigate(['/account/login']);
+    if (!email)
+    {
+      this.errMsg = "Please enter email address"
+      return;
+    }
+    if (!pwd)
+    {
+      this.errMsg = "Please enter password"
+      return;
+    }
     this.accountservice.login(email, pwd)
-      .pipe(first())
-      .subscribe({
-        next: () => {
-          console.log('Done');
-
+    .pipe(first())
+    .subscribe(
+        (data:any) => {
+          if (data.status === 200) 
+          {
+            this.router.navigate(['/home']); 
+            return;
+          }
+          this.errMsg = data.errMsg;
         },
-        error: error => {
-          console.log(error);
-        }
+        error => {
+         
+         //   this.alertService.error(error);
+         //   this.loading = false;
+        
       });
 
   }

@@ -7,10 +7,12 @@
     <h2 >Sign-in</h2>
     <label for="email">Email:</label>
     <input type="text" placeholder="email" name="email"  id="email" #email>
+
     <label for="Passsword">Password:</label>
     <input type="Password" placeholder="Passsword" name="Password" #pwd>
 
       <button  (click)="login(email.value, pwd.value)" >LOGIN</button>
+      <div ng-if="errMsg" > {{errMsg}} </div>
       
   </div>
   <h3>New User</h3>

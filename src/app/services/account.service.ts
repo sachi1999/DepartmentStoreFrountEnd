@@ -24,12 +24,11 @@ export class AccountService {
         return this.userSubject.value;
     }
 
-    login(email, pwd) {
+    login(emailId, pwd) {
         console.log("Login user");
-        return this.http.post<User>(`${environment.apiUrl}/api/v1/Auth/Login`, { email, pwd })
+        return this.http.post<User>(`${environment.apiUrl}/api/v1/Auth/Login`, { emailId, pwd })
             .pipe(map(user => {
-               
-                return null;
+                return user;
             }));
     }
 
