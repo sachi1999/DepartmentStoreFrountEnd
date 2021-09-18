@@ -1,0 +1,21 @@
+
+<div class="main">
+ 
+   <div class="signin">
+   
+    <h1>Department Store</h1>
+    <h2 >Sign-in</h2>
+    <label for="email">Email:</label>
+    <input type="text" placeholder="email" name="email"  id="email" #email>
+    <label for="Passsword">Password:</label>
+    <input type="Password" placeholder="Passsword" name="Password" #pwd>
+
+      <button  (click)="login(email.value, pwd.value)" >LOGIN</button>
+      
+  </div>
+  <h3>New User</h3>
+  <a routerLink="/account/register" class="btn btn-link">Register</a>
+
+</div>
+
+

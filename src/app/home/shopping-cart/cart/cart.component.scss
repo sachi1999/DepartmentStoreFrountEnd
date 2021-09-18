@@ -1,0 +1,28 @@
+ul{
+    list-style-type: none;
+}
+.alert{
+    background-color: rgb(219, 184, 87);
+   width:fit-content;
+}
+
+.list{
+    display: block;
+    
+    margin-right: 30px;
+}
+
+.total{
+    background-color: gray;
+    padding:4px;
+    width:100px;
+    border-radius: 5px;
+
+}
+
+.list-item{
+    
+    background-color: lightgray;
+    border-radius: 5px; 
+    width: 100px;
+}
