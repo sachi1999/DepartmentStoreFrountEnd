@@ -11,7 +11,7 @@ export class Auth implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
-        if (getCookie("auths")) {
+        if (getCookie("auth")) {
             return true;
         }
 

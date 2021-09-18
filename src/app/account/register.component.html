@@ -41,6 +41,7 @@
                     <span *ngIf="loading" class="register"></span>
                     Register
                 </button>
+                <div ng-if="errMsg" > {{errMsg}} </div>
                 <a routerLink="../login" class="btn btn-link">Cancel</a>
             </div>
         </form>
