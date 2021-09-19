@@ -10,12 +10,14 @@ import { ProductService } from '@app/services/product.service';
 })
 export class ShoppingComponent implements OnInit {
 
-  productList:Product[]=[]
+  productList: Product[] = []
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-   this.productList=this.productService.getProducts();
+    this.productService.getProducts().subscribe((products) => {
+      this.productList = products;
+    });
   }
 
 }

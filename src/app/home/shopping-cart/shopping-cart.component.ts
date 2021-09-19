@@ -17,12 +17,6 @@ export class ShoppingCartComponent implements OnInit {
   searchbyCatogery(searchTerm: string) {
     this.productService.searchByCataoger(searchTerm)
       .pipe(first())
-      .subscribe(
-        (data: any) => {
-          console.log(data);
-        },
-        error => {
-          console.log(error)
-        });
+      .subscribe();
   }
 }

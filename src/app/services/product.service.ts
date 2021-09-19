@@ -11,32 +11,22 @@ import { map } from "rxjs/operators";
 export class ProductService {
     public productsList: BehaviorSubject<Product[]>;
     public products: Observable<Product[]>;
-    // products:Product[]=[
-    //     new Product(1,'product 1','-------descriptuion-------',100),
-    //     new Product(2,'product 2','-------descriptuion-------',150),
-    //     new Product(3,'product 3','-------descriptuion-------',190),
-    //     new Product(4,'product 4','-------descriptuion-------',120),
-    //     new Product(5,'product 5','-------descriptuion-------',10),
-    //     new Product(6,'product 6','-------descriptuion-------',167),
-    //     new Product(6,'product 6','-------descriptuion-------',167),
-
-    // ]
 
     constructor(private http: HttpClient) {
         this.productsList = new BehaviorSubject<Product[]>([]);;
         this.products = this.productsList.asObservable();
     }
 
-    getProducts(): Product[] {
-        return this.productsList.value;
+    getProducts() {
+        return this.productsList;
     }
 
-    searchByCataoger(catagoeryTerm: string) {
+    searchByCataoger(catagoeryTerm: String) {
         return this.http.get<any>(`${environment.apiUrl}/api/v1/search/catergory?catergory=${catagoeryTerm}`)
-        .pipe(map(products => {
-            this.productsList.next(products);
-            return products;
-        }));
+            .pipe(map(products => {
+                this.productsList.next(products);
+                return products;
+            }));
     }
 }
 
