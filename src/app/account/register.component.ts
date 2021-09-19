@@ -29,8 +29,6 @@ export class RegisterComponent implements OnInit {
       emailId: ['', Validators.required],
       pwd: ['', [Validators.required, Validators.minLength(6)]]
     });
-
-    console.log(this);
   }
 
   get f() { return this.form.controls; }

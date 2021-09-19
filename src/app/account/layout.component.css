@@ -1,0 +1,12 @@
+.continer {
+    background: url('https://st4.depositphotos.com/5797516/20027/i/1600/depositphotos_200277328-stock-photo-shopping-trolley-department-store-goods.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
