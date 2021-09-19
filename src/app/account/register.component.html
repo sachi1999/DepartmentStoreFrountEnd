@@ -33,6 +33,9 @@
 
                     </div>
                 </div>
+                <div *ngIf="errMsg" class="form-group-1">
+                    <div class="error"> {{errMsg}}</div>
+                </div>
                 <div class="form-group-1">
                     <button [disabled]="!form.valid" class="btn btn-primary">
                         <span class="register"></span>

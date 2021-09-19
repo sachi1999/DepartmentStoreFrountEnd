@@ -39,9 +39,12 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data: any) => {
-          if (data.emailId === this.form.value.emailId) {
+
+          if (data?.emailId === this.form.value.emailId) {
             this.router.navigate(['/account/login']);
             return;
+          } else {
+            this.errMsg ="Email address already exist!"
           }
         },
         error => {
