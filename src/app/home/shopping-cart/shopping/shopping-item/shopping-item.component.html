@@ -5,8 +5,8 @@
       <p class="card-text">{{productItem.description}}</p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
-          <button type="button" class="cart">Add to Cart</button>
-          <button type="button" class="View">View Details</button>
+          <button [disabled]="disable" (click)="updateItem(1)" type="button" class="cart"> {{addText}} </button>
+          <button *ngIf="qty>0" (click)="updateItem(-1)" type="button" class="View">Reduce Quantity</button>
         </div>
         
       </div>
