@@ -34,7 +34,7 @@ h3 {
 }
 
 .confirm-order{
-    margin-left: 36%;
+    margin: 5px 5px;
     padding: 10px;
     background-color: cornsilk;
     border-radius: 10px;
@@ -45,4 +45,9 @@ h3 {
 
 .radio{
     margin-left: 45px;
+}
+
+.order-btn-group{
+    display: flex;
+    justify-content: center;
 }

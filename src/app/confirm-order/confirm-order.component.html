@@ -35,8 +35,9 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="order-btn-group">
                 <button  [disabled]="!form.valid" (click)="onSubmit()" class="confirm-order" type="button">Confirm Order</button>
+                <button  router-link="/" (click)="onSubmit()" class="confirm-order" type="button">Continue shopping</button>
             </div>
         </form>
     </div>
