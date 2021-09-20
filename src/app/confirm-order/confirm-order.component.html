@@ -1,41 +1,43 @@
 <div class="main">
     <div class="main-content">
-        <div class="row">
-            <div class="col-50">
-                <h3>Billing Address</h3>
-                <div>
-                    <label for="fname"><i class="label"></i> Full Name</label><br>
-                    <input type="text" class="input" id="fname" name="firstname" placeholder="Name">
-                </div>
-                <div>
-                    <label for="email"><i class="label"></i> Email</label><br>
-                    <input type="text" class="input" name="email" placeholder="john@example.com">
-                </div>
-                <div>
-                    <label for="adr"><i class="label"></i> Address</label><br>
-                    <input type="text" class="input" name="address" placeholder="">
-                </div>
-                <div>
-                    <label for="city"><i class="label"></i> City</label><br>
-                    <input type="text" class="input" name="city" placeholder="Bengaluru">
-                </div>
-                <div>
-                    <label for="state" class="label">State</label><br>
-                    <input type="text" class="input" name="state" placeholder="Karnataka">
-                </div>
-                <div>
-                    <label for="zip" class="label">Zip</label><br>
-                    <input type="text" class="input" name="zip" placeholder="10001">
-                </div>
-                <div class="payment">
-                    <h3>Payment</h3>
-                    <input type="radio" class="radio" name="paymentoption" value="cashOnDelivary">
-                      <label for="html" class="label">CashOnDelivary</label><br>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-50">
+                    <h3>Billing Address</h3>
+                    <div>
+                        <label for="fname"><i class="label"></i> Full Name</label><br>
+                        <input formControlName="fullName" type="text" class="input" id="fname" name="firstname" placeholder="Name">
+                    </div>
+                    <div>
+                        <label for="email"><i class="label"></i> Email</label><br>
+                        <input formControlName="email" type="text" class="input" name="email" placeholder="john@example.com">
+                    </div>
+                    <div>
+                        <label for="adr"><i class="label"></i> Address</label><br>
+                        <input formControlName="address" type="text" class="input" name="address" placeholder="">
+                    </div>
+                    <div>
+                        <label for="city"><i class="label"></i> City</label><br>
+                        <input formControlName="city" type="text" class="input" name="city" placeholder="Bengaluru">
+                    </div>
+                    <div>
+                        <label for="state" class="label">State</label><br>
+                        <input formControlName="state" type="text" class="input" name="state" placeholder="Karnataka">
+                    </div>
+                    <div>
+                        <label for="zip" class="label">Zip</label><br>
+                        <input formControlName="zipCode" type="text" class="input" name="zip" placeholder="10001">
+                    </div>
+                    <div class="payment">
+                        <h3>Payment</h3>
+                        <input type="radio" class="radio" name="paymentoption" value="cashOnDelivary">
+                          <label for="html" class="label">CashOnDelivary</label><br>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <button routerLink="../" class="confirm-order" type="button">Confirm Order</button>
-        </div>
+            <div>
+                <button  [disabled]="!form.valid" (click)="onSubmit()" class="confirm-order" type="button">Confirm Order</button>
+            </div>
+        </form>
     </div>
 </div>
