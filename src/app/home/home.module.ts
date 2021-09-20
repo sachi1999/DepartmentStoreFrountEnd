@@ -25,9 +25,16 @@ import { ShoppingComponent } from './shopping-cart/shopping/shopping.component';
         ShoppingComponent,
         ShoppingItemComponent,
         CartItemComponent,
-CartComponent,
+        CartComponent,
     ],
-   
+    exports: [
+        ShoppingCartComponent,
+        ShoppingComponent,
+        ShoppingItemComponent,
+        CartItemComponent,
+        CartComponent
+    ]
+
 })
 export class Homemodule { };
 

@@ -1,12 +1,19 @@
-<div  *ngIf="cartItems.length <=0" class="alert">cart is empty</div>
+<div *ngIf="cartItems.length <=0" class="alert cart-continer"><strong> Cart is empty</strong></div>
 
-<ul *ngIf="cartItems.length > 0" class="list">
-<li class="list-item" *ngFor="let item of cartItems">
-    <app-cart-item [cartItem]="item"></app-cart-item>
-</li>
+<div *ngIf="cartItems.length > 0" class="cart-continer">
 
-<li class="list-group-item-activity">
-    <strong class="total">total:{{ cartTotal }} INR</strong>
+    <ul class="list">
+        <li class="list-item" *ngFor="let item of cartItems">
+            <app-cart-item [cartItem]="item"></app-cart-item>
+        </li>
 
-</li>
-</ul>
+        <li class="list-group-item-activity">
+            <strong class="total">total: {{ cartTotal }} INR</strong>
+
+        </li>
+
+    </ul>
+    <button routerLink="/orderReview" class="place-order"> Place Order </button>
+
+
+</div>

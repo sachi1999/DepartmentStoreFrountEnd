@@ -6,13 +6,34 @@
 .View{
     background-color: cornsilk;
     border-radius: 5px;
+    margin: 5px;
 }
 
 .btn-group{
-    margin-left: 15px;
+    display: flex;
+    margin: auto;
+
 }
 
 strong{
     color: black;
 }
 
+.shadow-sm {
+    margin-top: 30px;
+}
+
+.card-continer:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color: #6c757d !important;
+    margin-left: 15px;
+}
+
+.cart {
+white-space: normal;
+margin: 5px;
+}

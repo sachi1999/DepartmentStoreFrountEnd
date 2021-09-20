@@ -1,17 +1,23 @@
 <app-nav> </app-nav>
 <div class="row">
-    <div class="col">
+    <div class="col-md-3">
         <app-filter></app-filter>
     </div>
-    <div class="col-md-8">
-        <div>
-           <input placeholder="Enter catogery to search" #search/>
-           <button  (click)="searchbyCatogery(search.value)"> Search </button>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="search-continer">
+                    <input class="search" placeholder="Enter catogery to search" #search />
+                    <button class="search-button" (click)="searchbyCatogery(search.value)"> Search </button>
+                </div>
+                <app-shopping></app-shopping>
+            </div>
+            <div class="col-md-3">
+                <app-cart></app-cart>
+            </div>
+
         </div>
-   
-        <app-shopping></app-shopping>
-    </div>
-    <div class="col">
-        <app-cart></app-cart>
+
+
     </div>
 </div>

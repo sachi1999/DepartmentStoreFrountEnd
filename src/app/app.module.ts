@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
         NgbModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        ConfirmOrderComponent
     ],
     bootstrap: [AppComponent]
 })
